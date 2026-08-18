@@ -1,0 +1,270 @@
+plataforma: web
+navegador:
+  cdp_url: http://127.0.0.1:9222
+  url_juego: https://tinystage.co/games/mood-swings
+  selector_raiz: body
+  dispositivo: Escritorio
+  orientacion: vertical
+  emular_al_conectar: false
+  ruta_chrome: ''
+  perfil_chrome: ''
+android:
+  adb: adb
+  serial: 127.0.0.1:5555
+  paquete: ''
+  espera_arranque_s: 6.0
+  cache_ms: 400
+botones_web:
+  iniciar_microfono:
+  - '[aria-label="Grabar"]'
+  - Grabar
+  - Iniciar micrófono
+  - Hablar
+  detener_microfono:
+  - DETENER GRABACION
+  - DETENER GRABACIÓN
+  - Detener grabación
+  - TERMINAR GRABACION
+  - Detener
+  - Parar
+  - Terminar
+  - '[aria-label="Grabar"]'
+  siguiente:
+  - ESTOY LISTO
+  - Estoy listo
+  - SIGUIENTE
+  - Siguiente
+  - ENTENDIDO
+  - Entendido
+  - Continuar
+  - Next
+  reintentar:
+  - REGRABAR ESTA RONDA
+  - Regrabar esta ronda
+  - Regrabar Esta Ronda
+  - Reintentar
+  - Repetir
+  cerrar_modal:
+  - Cerrar
+  - Aceptar
+  - OK
+  avanzar:
+  - SEGUIR GANANDO MONEDAS
+  - Seguir ganando monedas
+  - SEGUIR JUGANDO
+  - ENTENDIDO
+  - Entendido
+  - ESTOY LISTO
+  - Estoy listo
+  - CONTINUAR
+  - Continuar
+  - VAMOS
+  - Vamos
+  - EMPEZAR
+  - Empezar
+  - COMENZAR
+  - LISTO
+  - Listo
+  - SIGUIENTE
+  - Siguiente
+  - Adelante
+  - De acuerdo
+  opciones:
+  - A
+  - B
+  - C
+  - D
+  palabras_avance:
+  - seguir ganando
+  - ganando monedas
+  - monedas
+  - seguir jugando
+  - entendido
+  - continuar
+  - siguiente
+  - estoy listo
+  descartar:
+  - Quizás la próxima
+  - Quizas la proxima
+  - QUIZÁS LA PRÓXIMA
+  - Ahora no
+  - Más tarde
+  - No, gracias
+  - Omitir
+  - Saltar
+  prohibidos:
+  - salir
+  - abandonar
+  - cancelar
+  - cerrar sesión
+  - volver
+  - atrás
+  - regresar
+  - menú principal
+  - rendirse
+  - exit
+  - quit
+  - conversacion
+  - conversación
+  - conversaciones
+  - échale un vistazo
+  - echale un vistazo
+  - un vistazo
+  - silencio
+  - mute
+  - reiniciar
+  - restart
+cuenta_regresiva:
+  selector: ''
+  patron: \b([1-5])\b
+  timeout_s: 12.0
+  margen_previo_ms: 250
+  fallback_s: 0.0
+extraccion:
+  emociones:
+  - alegre
+  - alegría
+  - feliz
+  - triste
+  - tristeza
+  - enojado
+  - enojo
+  - molesto
+  - sorprendido
+  - sorpresa
+  - miedo
+  - asustado
+  - neutral
+  - serio
+  - emocionado
+  - calmado
+  - susurro
+  - gritando
+  - ira
+  - furia
+  - furioso
+  - nervioso
+  - preocupado
+  - burlón
+  - sarcástico
+  - romántico
+  - cansado
+  - decepcionado
+  - orgulloso
+  - avergonzado
+  emocion_por_defecto: neutral
+  patrones_comillas:
+  - '[“"'']([^”"'']{2,400})[”"'']'
+  min_caracteres: 2
+  min_palabras_frase_nueva: 10
+tts_app:
+  modo: http
+  http:
+    base_url: ''
+    ruta_generar: /api/generate
+    ruta_estado: /api/estado
+    motor: piper
+    voz: ''
+    carpeta_out: salida
+    lufs: -18.0
+    intensidad: null
+    referencia: ''
+    timeout_s: 180
+  cli:
+    python: python
+    script: C:/Users/darkg/Downloads/vonuevoactor/app.py
+    args:
+    - --texto
+    - '{texto}'
+    - --emocion
+    - '{emocion}'
+    cwd: ''
+    timeout_s: 120
+  gui:
+    titulo_ventana: Generador de Voz
+    campo_texto:
+      modo: ocr
+      ancla: Texto
+      offset:
+      - 0
+      - 40
+      coord: null
+    campo_emocion:
+      modo: ocr
+      ancla: Emoción
+      offset:
+      - 0
+      - 40
+      coord: null
+    boton_generar: Generar voz
+    espera_generacion_s: 90
+  carpeta_salida: C:/Users/darkg/Downloads/vonuevoactor/salida
+  extension: .wav
+  usar_archivo_mas_reciente: false
+  antiguedad_maxima_s: 180
+microfono_virtual:
+  modo: cable
+  archivo_destino: ''
+  samplerate_destino: 48000
+  dispositivo_salida: CABLE Input
+  monitor_local: ''
+  ganancia_db: -3.0
+  normalizar_lufs: -18.0
+  silencio_inicial_ms: 150
+  silencio_final_ms: 250
+ocr:
+  idioma: es
+  usar_gpu: false
+  monitor: 1
+razonamiento:
+  activo: false
+  proveedor: anthropic
+  base_url: ''
+  modelo: claude-sonnet-4-6
+  api_key_env: ANTHROPIC_API_KEY
+  max_reintentos: 3
+  solo_si_falla_dom: true
+obs:
+  activo: false
+  host: localhost
+  puerto: 4455
+  password: ''
+retroalimentacion:
+  activa: true
+  saturado:
+  - aléjate del micrófono
+  - alejate del microfono
+  - satur
+  - demasiado fuerte
+  - muy fuerte
+  - baja la voz
+  - distorsion
+  - distorsión
+  bajo:
+  - acércate al micrófono
+  - acercate al microfono
+  - no te escuch
+  - habla más fuerte
+  - habla mas fuerte
+  - muy bajo
+  - sube la voz
+  repetir:
+  - intenta de nuevo
+  - vuelve a intentar
+  - no entendí
+  - no entendi
+  paso_db: 3.0
+  ganancia_min_db: -18.0
+  ganancia_max_db: 12.0
+bucle:
+  max_rondas: 60
+  pausa_entre_rondas_s: 1.0
+  detener_si_repite_texto: true
+  max_reintentos_toma: 3
+  reusar_audio_misma_frase: true
+  espera_fin_grabacion_s: 60.0
+  factor_lentitud: 1.0
+  ocr_de_respaldo: false
+  toques_para_premios: 6
+  captura_por_ronda: true
+  carpeta_logs: ./logs
