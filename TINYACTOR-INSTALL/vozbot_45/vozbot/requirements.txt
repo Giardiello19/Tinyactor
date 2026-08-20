@@ -1,0 +1,16 @@
+# Núcleo — esto es lo único imprescindible.
+playwright>=1.45          # control del navegador vía CDP
+mss>=9.0                  # captura de pantalla
+sounddevice>=0.4.6        # salida hacia el cable virtual (micrófono emulado)
+soundfile>=0.12
+pyloudnorm>=0.1.1         # normalización LUFS
+numpy>=1.24
+pydantic>=2.6             # esquema estricto del guion
+tenacity>=8.2             # reintentos
+pyautogui>=0.9.54         # clics en tu app .py de TTS
+pyperclip>=1.8
+pygetwindow>=0.0.9
+PyYAML>=6.0
+PySide6>=6.6              # panel de control
+httpx>=0.27               # cliente del modelo de razonamiento
+obsws-python>=1.6         # control de grabación (opcional)

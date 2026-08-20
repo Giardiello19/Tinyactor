@@ -1,0 +1,7 @@
+# OCR opcional. Solo hace falta si el DOM no entrega el texto (canvas, iframes)
+# o si usas el modo "gui" para tu app de voz.
+# Instálalo APARTE:  pip install -r requirements-ocr.txt
+# paddlepaddle no publica ruedas para Python 3.13 todavía; si falla, usa 3.11 o 3.12.
+paddlepaddle>=2.6.2
+paddleocr>=2.7.3
+Pillow>=10.0
